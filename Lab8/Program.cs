@@ -28,4 +28,51 @@ namespace Lab8
             }
         }
     }
+    
+    public abstract class ArrayItem
+    {
+        public int Value { get; set; }
+        public abstract void Action(int currentIndex, List<ArrayItem> array);
+
+        public ArrayItem(int value)
+        {
+            Value = value;
+        }
+    }
+    
+    public class SummAfterItem : ArrayItem
+    {
+        public override void Action(int currentIndex, List<ArrayItem> array)
+        {
+            for (int i = currentIndex + 1; i < array.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Value += array[i].Value;
+                }
+            }
+        }
+
+        public SummAfterItem(int value) : base(value)
+        {
+        }
+    }
+    
+    public class SummBeforeItem : ArrayItem
+    {
+        public override void Action(int currentIndex, List<ArrayItem> array)
+        {
+            for (int i = currentIndex - 1; i > 0; i--)
+            {
+                if (i % 2 == 0)
+                {
+                    Value += array[i].Value;
+                }
+            }
+        }
+
+        public SummBeforeItem(int value) : base(value)
+        {
+        }
+    }
 }
