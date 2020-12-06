@@ -11,27 +11,27 @@ namespace Lab6
             var petrov = new Student("Petr", "Petrov", new DateTime(1999, 9, 9), 5);
             
             var group = new Group("Nice boys");
-            Console.WriteLine(group);
+            group.PrintGroupInfo();
             
             group.Add(ivanov);
             group.Add(petrov);
-            Console.WriteLine(group);
+            group.PrintGroupInfo();
 
-            Console.WriteLine(group.SearchBySecondName("Petrov"));
-            Console.WriteLine(group.SearchByScore(4));
-            Console.WriteLine(group.SearchByBirthday(new DateTime(1999, 9, 9)));
+            group.PrintStudentInfo(group.SearchBySecondName("Petrov"));
+            group.PrintStudentInfo(group.SearchByScore(4));
+            group.PrintStudentInfo(group.SearchByBirthday(new DateTime(1999, 9, 9)));
 
             group.Delete(ivanov);
-            Console.WriteLine(group);
+            group.PrintGroupInfo();
         }
     }
 
     public class Group
     {
         public string Name { get; set; }
-        public int Count => _students.Count;
+        public int Count => _students.Length;
 
-        private List<Student> _students = new List<Student>();
+        private Student[] _students;
 
         public Group(string name)
         {
@@ -40,37 +40,105 @@ namespace Lab6
 
         public Student SearchBySecondName(string secondName)
         {
-            return _students.Find(s => s.SecondName == secondName);
+            foreach (var item in _students)
+            {
+                if (item.SecondName == secondName)
+                {
+                    return item;
+                }
+            }
+            
+            return null;
         }
 
         public Student SearchByScore(int score)
         {
-            return _students.Find(s => s.Score == score);
+            foreach (var item in _students)
+            {
+                if (item.Score == score)
+                {
+                    return item;
+                }
+            }
+            
+            return null;
         }
 
         public Student SearchByBirthday(DateTime birthday)
         {
-            return _students.Find(s => s.Birthday == birthday);
+            foreach (var item in _students)
+            {
+                if (item.Birthday == birthday)
+                {
+                    return item;
+                }
+            }
+            
+            return null;
         }
 
         public void Add(Student student)
         {
+            if (_students == null)
+            {
+                _students = new[] {student};
+            }
+            else
+            {
+                var newStudents = new Student[_students.Length + 1];
+                _students.CopyTo(newStudents, 0);
+                newStudents[newStudents.Length - 1] = student;
+                _students = newStudents;
+            }
+            
             Console.WriteLine($"Add student {student} to group {Name}");
-            _students.Add(student);
         }
 
         public void Delete(Student student)
         {
-            Console.WriteLine($"Remove student {student} from group {Name}");
-            _students.Remove(student);
+            try
+            {
+                if(_students != null)
+                {
+                    var newStudents = new Student[_students.Length - 1];
+                    var newIndex = 0;
+                    for (int i = 0; i < _students.Length; i++)
+                    {
+                        if (_students[i] != student)
+                        {
+                            newStudents[newIndex] = _students[i];
+                            newIndex++;
+                        }
+                    }
+
+                    _students = newStudents;
+                }
+                Console.WriteLine($"Remove student {student} from group {Name}");
+            }
+            catch (IndexOutOfRangeException)
+            {
+            }
+        }
+
+        public void PrintGroupInfo()
+        {
+            Console.WriteLine(this);
+        }
+
+        public void PrintStudentInfo(Student student)
+        {
+            Console.WriteLine(student);
         }
 
         public override string ToString()
         {
             var group = $"{Name}\n";
-            foreach (var student in _students)
+            if(_students != null)
             {
-                group += $"{student}\n";
+                foreach (var student in _students)
+                {
+                    group += $"{student}\n";
+                }
             }
 
             return group;
@@ -98,7 +166,8 @@ namespace Lab6
 
         public override string ToString()
         {
-            return FullName;
+            var info = $"{FullName} Birthday = {Birthday:dd.MM.yyyy} Score = {Score} ";
+            return info;
         }
     }
 }

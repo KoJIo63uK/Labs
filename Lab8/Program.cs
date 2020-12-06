@@ -7,32 +7,42 @@ namespace Lab8
     {
         static void Main(string[] args)
         {
-            var list = new List<ArrayItem>
-            {
-               new SummAfterItem(1),
-               new SummAfterItem(2),
-               new SummAfterItem(3),
-               new SummAfterItem(4),
-               new SummBeforeItem(5),
-               new SummBeforeItem(6),
-               new SummBeforeItem(7),
-               new SummBeforeItem(8),
-               new SummBeforeItem(9),
-               new SummBeforeItem(10)
-            };
+            var list = GetArray(5);
 
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < list.Length; i++)
             {
                 list[i].Action(i, list);
                 Console.WriteLine(list[i].Value);
             }
         }
+        
+        public static ArrayItem[] GetArray(int count)
+        {
+            var random = new Random((int) DateTime.Now.Ticks);
+            var array = new ArrayItem[count];
+            for (int i = 0; i < count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    array[i] = new SummAfterItem(random.Next(10));
+                }
+                else
+                {
+                    array[i] = new SummBeforeItem(random.Next(10));
+                }
+
+                Console.Write($"{array[i].Value} ");
+            }
+
+            Console.WriteLine();
+            return array;
+        }
     }
-    
+
     public abstract class ArrayItem
     {
         public int Value { get; set; }
-        public abstract void Action(int currentIndex, List<ArrayItem> array);
+        public abstract void Action(int currentIndex, ArrayItem[] array);
 
         public ArrayItem(int value)
         {
@@ -42,11 +52,11 @@ namespace Lab8
     
     public class SummAfterItem : ArrayItem
     {
-        public override void Action(int currentIndex, List<ArrayItem> array)
+        public override void Action(int currentIndex, ArrayItem[] array)
         {
-            for (int i = currentIndex + 1; i < array.Count; i++)
+            for (int i = currentIndex + 1; i < array.Length; i++)
             {
-                if (i % 2 == 0)
+                if (array[i].Value % 2 == 0)
                 {
                     Value += array[i].Value;
                 }
@@ -60,11 +70,11 @@ namespace Lab8
     
     public class SummBeforeItem : ArrayItem
     {
-        public override void Action(int currentIndex, List<ArrayItem> array)
+        public override void Action(int currentIndex, ArrayItem[] array)
         {
-            for (int i = currentIndex - 1; i > 0; i--)
+            for (int i = currentIndex - 1; i >= 0; i--)
             {
-                if (i % 2 == 0)
+                if (array[i].Value % 2 == 0)
                 {
                     Value += array[i].Value;
                 }

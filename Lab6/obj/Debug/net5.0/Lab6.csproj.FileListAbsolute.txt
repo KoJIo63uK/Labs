@@ -1,0 +1,15 @@
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/bin/Debug/net5.0/Lab6.deps.json
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/bin/Debug/net5.0/Lab6.runtimeconfig.json
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/bin/Debug/net5.0/Lab6.runtimeconfig.dev.json
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/bin/Debug/net5.0/Lab6.dll
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/bin/Debug/net5.0/ref/Lab6.dll
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/bin/Debug/net5.0/Lab6.pdb
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/obj/Debug/net5.0/Lab6.csprojAssemblyReference.cache
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/obj/Debug/net5.0/Lab6.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/obj/Debug/net5.0/Lab6.AssemblyInfoInputs.cache
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/obj/Debug/net5.0/Lab6.AssemblyInfo.cs
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/obj/Debug/net5.0/Lab6.csproj.CoreCompileInputs.cache
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/obj/Debug/net5.0/Lab6.dll
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/obj/Debug/net5.0/ref/Lab6.dll
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/obj/Debug/net5.0/Lab6.pdb
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab6/obj/Debug/net5.0/Lab6.genruntimeconfig.cache

@@ -7,22 +7,40 @@ namespace Lab7
     {
         static void Main(string[] args)
         {
-            var list = new List<int>{1,4,6,9,12,3,15,16,2,3};
-            var number = int.Parse(Console.ReadLine());
-
-            var summ = 0;
-            string message = "";
-            foreach (var item in list)
+            var array = new ListItem[]
             {
-                if (item > number)
-                {
-                    summ += item;
-                    message += $"{item} + ";
-                }
+                new ListItem(0,1),
+                new ListItem(1,2),
+                new ListItem(2,3),
+                new ListItem(3,4),
+                new ListItem(4, null), 
+            };
+
+            var number = int.Parse(Console.ReadLine());
+            var summ = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                summ += array[i].Summ(number, array);
             }
 
-            message = message.Substring(0, message.Length - 3);
-            Console.WriteLine($"{message} = {summ}");
+            Console.WriteLine(summ);
+        }
+
+        public class ListItem
+        {
+            public int Value { get; set; }
+            public int? Next { get; set; }
+
+            public ListItem(int value, int? next)
+            {
+                Value = value;
+                Next = next;
+            }
+
+            public int Summ(int number, ListItem[] array)
+            {
+                return Value > number ? Value : 0;
+            }
         }
     }
 }

@@ -1,0 +1,15 @@
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/bin/Debug/net5.0/Lab8.deps.json
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/bin/Debug/net5.0/Lab8.runtimeconfig.json
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/bin/Debug/net5.0/Lab8.runtimeconfig.dev.json
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/bin/Debug/net5.0/Lab8.dll
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/bin/Debug/net5.0/ref/Lab8.dll
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/bin/Debug/net5.0/Lab8.pdb
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/obj/Debug/net5.0/Lab8.csprojAssemblyReference.cache
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/obj/Debug/net5.0/Lab8.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/obj/Debug/net5.0/Lab8.AssemblyInfoInputs.cache
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/obj/Debug/net5.0/Lab8.AssemblyInfo.cs
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/obj/Debug/net5.0/Lab8.csproj.CoreCompileInputs.cache
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/obj/Debug/net5.0/Lab8.dll
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/obj/Debug/net5.0/ref/Lab8.dll
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/obj/Debug/net5.0/Lab8.pdb
+/Users/vorosalov/RiderProjects/ConsoleApp2/Lab8/obj/Debug/net5.0/Lab8.genruntimeconfig.cache
